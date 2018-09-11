@@ -1,6 +1,8 @@
 <template>
-  <div id="app"> 
+  <div id="app">  
     <c-01/> 
+    <hr>
+    <c-02/> 
   </div>
 </template>
 

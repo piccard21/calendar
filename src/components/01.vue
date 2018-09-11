@@ -1,5 +1,6 @@
 <template>
   <div> 
+    <h3>Day 1</h3>
     <input type="text" v-model="input">
     <div>
     	<h4>One</h4>
@@ -30,7 +31,7 @@ export default {
       	if(this.input.length%2) return
 
       	const steps = this.input.length/2 
-      
+
       	return [...this.input].map(i => parseInt(i)).reduce( (acc, current, idx, src) => { 
       		if(idx+steps > src.length) return acc
       		const currentStep = src.slice(idx+steps)[0]
