@@ -30,11 +30,11 @@ export default {
       	if(this.input.length%2) return
 
       	const steps = this.input.length/2 
-
-      	return [...this.input].reduce( (acc, current, idx, src) => { 
+      
+      	return [...this.input].map(i => parseInt(i)).reduce( (acc, current, idx, src) => { 
       		if(idx+steps > src.length) return acc
       		const currentStep = src.slice(idx+steps)[0]
-      		return (current === currentStep) ? acc+parseInt(current)+parseInt(currentStep) : acc
+      		return (current === currentStep) ? acc+current+currentStep : acc
       	},0)
       }
   }
