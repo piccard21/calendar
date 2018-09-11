@@ -29,7 +29,7 @@ export default {
       two() {  
       	if(this.input.length%2) return
 
-      	let steps = this.input.length/2 
+      	const steps = this.input.length/2 
 
       	return [...this.input].reduce( (acc, current, idx, src) => { 
       		if(idx+steps > src.length) return acc
