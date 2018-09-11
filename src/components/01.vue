@@ -2,7 +2,12 @@
   <div> 
     <input type="text" v-model="input">
     <div>
-      {{calc}}
+    	<h4>One</h4>
+      	{{one}}
+    </div>
+    <div>
+    	<h4>Two</h4>
+      	{{two}}
     </div>
   </div>
 </template>
@@ -16,10 +21,20 @@ export default {
     }
   },
   computed: {
-      calc() {
+      one() {
       	return [...this.input].reduce( (acc, current, idx, src) => { 
-      		console.info(current, src.slice(idx-1)[0])
       		return (current === src.slice(idx-1)[0]) ? acc+parseInt(current) : acc
+      	},0)
+      },
+      two() {  
+      	if(this.input.length%2) return
+
+      	let steps = this.input.length/2 
+
+      	return [...this.input].reduce( (acc, current, idx, src) => { 
+      		if(idx+steps > src.length) return acc
+      		const currentStep = src.slice(idx+steps)[0]
+      		return (current === currentStep) ? acc+parseInt(current)+parseInt(currentStep) : acc
       	},0)
       }
   }
