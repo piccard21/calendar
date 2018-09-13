@@ -44,13 +44,30 @@ export default {
           .filter(n => n)
           .sort((a, b) => a - b)
           .reduce((acc, current, idx, src) => { 
-            console.info(src[0] , src.slice(-1)[0], acc)
             return (idx === 0) ?  src.slice(-1)[0]-src[0]  : acc 
           },0)
           )
         .reduce((acc, current) => acc + current)
       },
-      two() {  
+      two() { 
+        return this.input.split('\n')
+        .map(r => r.split(/\s/)
+          .map(l => parseInt(l))
+          .filter(n => n)
+          .reduce((a, n, i, s) => {   
+              s.forEach((nn, ii) => { 
+                if(Number.isInteger(n/nn) && i !== ii) {
+                  a = a + n/nn 
+                  return a
+                }  
+              }) 
+              return a
+          }, 0) 
+          )
+        .reduce((a, n, i, s) => {
+          return a+n
+        })
+
       }
   }
 }
