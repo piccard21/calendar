@@ -1,8 +1,10 @@
 <template>
   <div id="app">  
-    <c-01/> 
+    <c-03/> 
     <hr>
     <c-02/> 
+    <hr>
+    <c-01/> 
   </div>
 </template>
 

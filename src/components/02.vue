@@ -1,14 +1,15 @@
+
 <template>
   <div> 
     <h3>Day 2</h3>
     <input type="text" v-model="input">
     <div>
-    	<h4>One</h4>
-      	{{one}}
+      <h4>One</h4>
+        {{one}}
     </div>
     <div>
-    	<h4>Two</h4>
-      	{{two}}
+      <h4>Two</h4>
+        {{two}}
     </div>
   </div>
 </template>
